@@ -1,0 +1,14 @@
+[
+{
+  "directory": "D:/code/zhoushuaiting_hw1/zhoushuaiting_hw1/build",
+  "command": "C:\\PROGRA~1\\X86_64~1.0-R\\mingw64\\bin\\gcc.exe  @CMakeFiles/main.dir/includes_C.rsp -g -o CMakeFiles\\main.dir\\src\\algebra.c.obj -c D:\\code\\zhoushuaiting_hw1\\zhoushuaiting_hw1\\src\\algebra.c",
+  "file": "D:/code/zhoushuaiting_hw1/zhoushuaiting_hw1/src/algebra.c",
+  "output": "CMakeFiles/main.dir/src/algebra.c.obj"
+},
+{
+  "directory": "D:/code/zhoushuaiting_hw1/zhoushuaiting_hw1/build",
+  "command": "C:\\PROGRA~1\\X86_64~1.0-R\\mingw64\\bin\\gcc.exe  @CMakeFiles/main.dir/includes_C.rsp -g -o CMakeFiles\\main.dir\\src\\main.c.obj -c D:\\code\\zhoushuaiting_hw1\\zhoushuaiting_hw1\\src\\main.c",
+  "file": "D:/code/zhoushuaiting_hw1/zhoushuaiting_hw1/src/main.c",
+  "output": "CMakeFiles/main.dir/src/main.c.obj"
+}
+]

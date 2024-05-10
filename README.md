@@ -63,3 +63,13 @@ Error: Matrix a and b must have the same rows and cols.
 
 ## 截止日期｜Deadline
 待定
+
+## 实现思路
+### det_matrix(Matrix a) 
+通过Laplace定理，按某一行展开并采用递归的方式，直至递归至仅剩单个元素来计算
+### Matrix inv_matrix(Matrix a)
+先计算伴随矩阵，伴随矩阵借助函数det_matrix(Matrix a)来完成，再通过计算得出逆矩阵
+### int rank_matrix(Matrix a)
+选定对角线上开头元素作为基础，然后判断当列后有没有非0数，将非零数移到后面并将该列后的所有元素减为0，依次类推直至全部为0，通过计算对角线上非零数的个数来求得矩阵的秩
+
+![本地运行截图](https://supernbking-1325509158.cos.ap-nanjing.myqcloud.com/a10f9a2067d3c8244ce02b3c154bfe0.png)
