@@ -204,25 +204,24 @@ Matrix inv_matrix(Matrix a)
                 }
             }
 
-            double num = (pow(-1, i + j) * det_matrix(newmatrix));
+            double num = (((i + j) % 2 == 0 ? 1 : -1) * det_matrix(newmatrix));
 
             bansui_Matric.data[j][i] = num;
         }
     }
-        Matrix result;
-        result.rows = a.rows;
-        result.cols = a.cols;
+    Matrix result;
+    result.rows = a.rows;
+    result.cols = a.cols;
 
-        double det_result = det_matrix(a);
-        for (int i = 0; i < a.rows; i++)
+    double det_result = det_matrix(a);
+    for (int i = 0; i < a.rows; i++)
+    {
+        for (int j = 0; j < a.rows; j++)
         {
-            for (int j = 0; j < a.rows; j++)
-            {
-                result.data[i][j] = bansui_Matric.data[i][j] / det_result;
-            }
+            result.data[i][j] = bansui_Matric.data[i][j] / det_result;
         }
-        return result;
-    
+    }
+    return result;
 }
 
 int rank_matrix(Matrix a)
