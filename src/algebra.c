@@ -161,9 +161,14 @@ double det_matrix(Matrix a)
 
 Matrix inv_matrix(Matrix a)
 {
-    if (a.rows != a.cols || det_matrix(a) == 0)
+    if (a.rows != a.cols)
     {
         printf("Error: The matrix must be a square matrix.\n");
+        return create_matrix(0, 0);
+    }
+    if (det_matrix(a) == 0.0)
+    {
+        printf("Error: The matrix is singular.\n");
         return create_matrix(0, 0);
     }
 
@@ -199,10 +204,11 @@ Matrix inv_matrix(Matrix a)
                 }
             }
 
-            double num = ((i + j) % 2 == 0 ? 1 : -1) * det_matrix(newmatrix);
+            double num = (pow(-1, i + j) * det_matrix(newmatrix));
+
             bansui_Matric.data[j][i] = num;
         }
-
+    }
         Matrix result;
         result.rows = a.rows;
         result.cols = a.cols;
@@ -216,7 +222,7 @@ Matrix inv_matrix(Matrix a)
             }
         }
         return result;
-    }
+    
 }
 
 int rank_matrix(Matrix a)
@@ -264,19 +270,18 @@ int rank_matrix(Matrix a)
 
 double trace_matrix(Matrix a)
 {
-    if(a.cols!=a.rows)
+    if (a.cols != a.rows)
     {
         printf("Error: The matrix must be a square matrix.\n");
         return 0;
     }
-    double trace=0.0;
-    for(int i=0;i<a.rows;i++)
+    double trace = 0.0;
+    for (int i = 0; i < a.rows; i++)
     {
-        trace+=a.data[i][i];
+        trace += a.data[i][i];
     }
     return trace;
 }
-
 
 void print_matrix(Matrix a)
 {
